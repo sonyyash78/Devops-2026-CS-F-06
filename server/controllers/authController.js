@@ -87,3 +87,51 @@ export const loginUser = async (req, res, next) => {
 // @desc    Log user out / clear cookie
 // @route   POST /api/auth/logout
 // @access  Public
+export const logoutUser = async (req, res, next) => {
+  try {
+    res.cookie('refreshToken', '', {
+      httpOnly: true,
+      expires: new Date(0),
+      sameSite: 'lax',
+      secure: process.env.NODE_ENV === 'production',
+    });
+    res.status(200).json({ message: 'Logged out successfully' });
+  } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Refresh access token
+// @route   POST /api/auth/refresh
+// @access  Public
+export const refreshAccessToken = async (req, res, next) => {
+  const refreshToken = req.cookies.refreshToken;
+
+  if (!refreshToken) {
+    return res.status(401).json({ message: 'Refresh token not found, please log in' });
+  }
+
+  try {
+    const decoded = jwt.verify(refreshToken, process.env.JWT_REFRESH_SECRET);
+    const user = await User.findById(decoded.id);
+
+    if (!user) {
+      return res.status(401).json({ message: 'User not found' });
+    }
+
+    // Generate new tokens (rotation)
+    const newAccessToken = generateAccessToken(user._id, user.role);
+    const newRefreshToken = generateRefreshToken(user._id);
+
+    sendRefreshTokenCookie(res, newRefreshToken);
+
+    res.json({ accessToken: newAccessToken });
+  } catch (error) {
+    console.error('Refresh token error:', error.message);
+    res.status(401).json({ message: 'Invalid refresh token, please log in again' });
+  }
+};
+
+// @desc    Get user profile
+// @route   GET /api/auth/me
+// @access  Private
