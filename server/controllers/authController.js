@@ -54,3 +54,36 @@ export const registerUser = async (req, res, next) => {
 // @desc    Authenticate user & get token
 // @route   POST /api/auth/login
 // @access  Public
+export const loginUser = async (req, res, next) => {
+  const { email, password } = req.body;
+
+  try {
+    const user = await User.findOne({ email });
+
+    if (user && (await user.matchPassword(password))) {
+      const accessToken = generateAccessToken(user._id, user.role);
+      const refreshToken = generateRefreshToken(user._id);
+
+      sendRefreshTokenCookie(res, refreshToken);
+
+      res.json({
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        phone: user.phone || '',
+        role: user.role,
+        createdAt: user.createdAt,
+        accessToken,
+      });
+    } else {
+      res.status(401);
+      throw new Error('Invalid email or password');
+    }
+  } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Log user out / clear cookie
+// @route   POST /api/auth/logout
+// @access  Public
