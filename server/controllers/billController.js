@@ -138,3 +138,27 @@ export const createBill = async (req, res, next) => {
 // @desc    Get all bills for a specific customer
 // @route   GET /api/bills/customer/:customerId
 // @access  Private
+export const getCustomerBills = async (req, res, next) => {
+  const { customerId } = req.params;
+
+  try {
+    // Security check: Customers can only view their own bills
+    if (req.user.role === 'customer' && req.user._id.toString() !== customerId) {
+      res.status(403);
+      throw new Error('Not authorized to access this customer billing history');
+    }
+
+    const bills = await Bill.find({ customerId })
+      .populate('customerId', 'name email')
+      .populate('pharmacistId', 'name email')
+      .sort({ createdAt: -1 });
+
+    res.json(bills);
+  } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Generate downloadable PDF Invoice for a bill
+// @route   GET /api/bills/:id/pdf
+// @access  Private
