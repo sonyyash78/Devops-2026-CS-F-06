@@ -162,3 +162,148 @@ export const getCustomerBills = async (req, res, next) => {
 // @desc    Generate downloadable PDF Invoice for a bill
 // @route   GET /api/bills/:id/pdf
 // @access  Private
+export const generateBillPDF = async (req, res, next) => {
+  const { id } = req.params;
+
+  try {
+    const bill = await Bill.findById(id).populate('customerId', 'name email phone');
+
+    if (!bill) {
+      res.status(404);
+      throw new Error('Bill not found');
+    }
+
+    // Security check: Customers can only download their own PDFs
+    if (req.user.role === 'customer' && req.user._id.toString() !== bill.customerId._id.toString()) {
+      res.status(403);
+      throw new Error('Not authorized to download this invoice');
+    }
+
+    // Configure headers for file download
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', `attachment; filename=invoice-${bill.billNumber}.pdf`);
+
+    const doc = new PDFDocument({ margin: 50, size: 'A4' });
+
+    // Pipe PDF directly to response stream
+    doc.pipe(res);
+
+    // --- Header Brand ---
+    doc
+      .fillColor('#0ea5e9')
+      .fontSize(22)
+      .text('PHARMADESK', 50, 45, { align: 'left' })
+      .fillColor('#64748b')
+      .fontSize(10)
+      .text('Intelligent Pharmacy & Batch Portal', 50, 70, { align: 'left' })
+      .moveDown();
+
+    // Invoice Title
+    doc
+      .fillColor('#0f172a')
+      .fontSize(18)
+      .text('INVOICE / RECEIPT', 300, 45, { align: 'right', width: 245 })
+      .fontSize(10)
+      .fillColor('#475569')
+      .text(`Invoice No: ${bill.billNumber}`, 300, 68, { align: 'right', width: 245 })
+      .text(`Date: ${new Date(bill.createdAt).toLocaleDateString()}`, 300, 83, { align: 'right', width: 245 })
+      .text(`Payment: ${bill.paymentMethod}`, 300, 98, { align: 'right', width: 245 })
+      .moveDown();
+
+    // Divider Line
+    doc.strokeColor('#e2e8f0').lineWidth(1).moveTo(50, 120).lineTo(550, 120).stroke();
+
+    // Client/Customer Information
+    const customerName = bill.customerId ? bill.customerId.name : 'Guest Customer';
+    const customerEmail = bill.customerId ? bill.customerId.email : 'N/A';
+    const customerPhone = bill.customerId ? (bill.customerId.phone || 'N/A') : (bill.guestPhone || 'N/A');
+
+    doc
+      .fillColor('#0f172a')
+      .fontSize(12)
+      .text('Billed To:', 50, 140, { bold: true })
+      .fontSize(10)
+      .fillColor('#475569')
+      .text(`Name: ${customerName}`, 50, 160)
+      .text(`Email: ${customerEmail}`, 50, 175)
+      .text(`Phone: ${customerPhone}`, 50, 190)
+      .moveDown(2);
+
+    // --- Table Headers ---
+    let tableTop = 220;
+    doc
+      .fillColor('#0f172a')
+      .fontSize(10)
+      .text('Medicine Details', 50, tableTop, { bold: true })
+      .text('Expiry Date', 240, tableTop, { bold: true })
+      .text('Unit Price', 340, tableTop, { bold: true, align: 'right', width: 60 })
+      .text('Quantity', 420, tableTop, { bold: true, align: 'right', width: 50 })
+      .text('Total', 500, tableTop, { bold: true, align: 'right', width: 50 });
+
+    // Header underline
+    doc.strokeColor('#94a3b8').lineWidth(1).moveTo(50, tableTop + 15).lineTo(550, tableTop + 15).stroke();
+
+    // --- Table Body ---
+    let y = tableTop + 25;
+    bill.items.forEach((item) => {
+      const expDate = item.expiryDate
+        ? new Date(item.expiryDate).toLocaleDateString('en-IN', { month: 'short', year: 'numeric' })
+        : 'N/A';
+      // Draw rows
+      doc
+        .fillColor('#334155')
+        .text(item.name, 50, y, { width: 180 })
+        .text(expDate, 240, y)
+        .text(`Rs. ${item.unitPrice.toFixed(2)}`, 340, y, { align: 'right', width: 60 })
+        .text(item.quantity.toString(), 420, y, { align: 'right', width: 50 })
+        .text(`Rs. ${(item.unitPrice * item.quantity).toFixed(2)}`, 500, y, { align: 'right', width: 50 });
+
+      y += 20;
+    });
+
+    // Subtotal Section
+    const subtotalY = y + 15;
+    doc.strokeColor('#e2e8f0').lineWidth(1).moveTo(340, subtotalY).lineTo(550, subtotalY).stroke();
+
+    doc
+      .fillColor('#475569')
+      .fontSize(10)
+      .text('Subtotal:', 340, subtotalY + 10, { align: 'right', width: 130 })
+      .text(`Rs. ${bill.subtotal.toFixed(2)}`, 480, subtotalY + 10, { align: 'right', width: 70 })
+
+      .text('Discount Applied:', 340, subtotalY + 25, { align: 'right', width: 130 })
+      .text(`-Rs. ${bill.discount.toFixed(2)}`, 480, subtotalY + 25, { align: 'right', width: 70 })
+
+      .fillColor('#0ea5e9')
+      .fontSize(12)
+      .text('Grand Total:', 340, subtotalY + 45, { bold: true, align: 'right', width: 130 })
+      .text(`Rs. ${bill.total.toFixed(2)}`, 480, subtotalY + 45, { bold: true, align: 'right', width: 70 });
+
+    // --- Footer ---
+    doc
+      .fillColor('#64748b')
+      .fontSize(9)
+      .text(
+        'Thank you for choosing Pharmadesk. Wishing you strong health!',
+        50,
+        720,
+        { align: 'center', width: 500 }
+      )
+      .fontSize(7)
+      .text(
+        'This is a computer-generated transaction invoice and requires no physical signatures.',
+        50,
+        735,
+        { align: 'center', width: 500 }
+      );
+
+    // End Document
+    doc.end();
+  } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Get all bills (Pharmacist and Admin only)
+// @route   GET /api/bills
+// @access  Private
