@@ -307,3 +307,52 @@ export const generateBillPDF = async (req, res, next) => {
 // @desc    Get all bills (Pharmacist and Admin only)
 // @route   GET /api/bills
 // @access  Private
+export const getAllBills = async (req, res, next) => {
+  try {
+    if (req.user.role === 'customer') {
+      res.status(403);
+      throw new Error('Not authorized to access all billing history');
+    }
+
+    const bills = await Bill.find({})
+      .populate('customerId', 'name email')
+      .populate('pharmacistId', 'name email')
+      .sort({ createdAt: -1 });
+
+    res.json(bills);
+  } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Get single bill detail
+// @route   GET /api/bills/:id
+// @access  Private
+export const getBillById = async (req, res, next) => {
+  const { id } = req.params;
+
+  try {
+    const bill = await Bill.findById(id)
+      .populate('customerId', 'name email phone')
+      .populate('pharmacistId', 'name email');
+
+    if (!bill) {
+      res.status(404);
+      throw new Error('Bill not found');
+    }
+
+    // Security check: Customers can only view their own bills
+    if (req.user.role === 'customer' && (!bill.customerId || req.user._id.toString() !== bill.customerId._id.toString())) {
+      res.status(403);
+      throw new Error('Not authorized to access this bill record');
+    }
+
+    res.json(bill);
+  } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Lookup customer by phone number
+// @route   GET /api/bills/lookup-customer
+// @access  Private
