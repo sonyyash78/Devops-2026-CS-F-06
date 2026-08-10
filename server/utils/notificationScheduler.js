@@ -346,3 +346,83 @@ const buildReminderEmailHtml = (medicineName, customerName) => {
 };
 
 // --- CRON JOB 3: Hourly Customer Email Reminders (time-matched) ---
+export const runEmailReminders = async () => {
+  const now = new Date();
+  const currentHour = now.getHours();
+  const currentMinute = now.getMinutes();
+  console.log(`[Reminder Cron] Running email reminder check (time: ${currentHour}:${currentMinute})...`);
+
+  try {
+    const reminders = await Reminder.find({ isActive: true }).populate('customerId');
+
+    if (reminders.length === 0) {
+      console.log('[Reminder Cron] No active medication reminders.');
+      return { status: 'success', message: 'No active reminders found' };
+    }
+
+    // Filter reminders whose scheduled hour and minute match the current time
+    const dueReminders = reminders.filter((r) => {
+      const { hour: reminderHour, minute: reminderMinute } = parseReminderTime(r.time);
+      return reminderHour === currentHour && reminderMinute === currentMinute;
+    });
+
+    if (dueReminders.length === 0) {
+      return { status: 'success', message: 'No reminders due this minute' };
+    }
+
+    console.log(`[Reminder Cron] ${dueReminders.length} reminder(s) due at ${currentHour}:${currentMinute}.`);
+
+    const transporter = getEmailTransporter();
+    const isEthereal = transporter.options.host === 'smtp.ethereal.email';
+
+    for (const reminder of dueReminders) {
+      const customer = reminder.customerId;
+      if (!customer) {
+        console.log(`[Reminder Cron] Skipping reminder ${reminder._id} — customer ref missing`);
+        continue;
+      }
+
+      const messageText = `Pharmadesk Reminder: Time to take your ${reminder.medicineName}. Keep healthy!`;
+
+      try {
+        const htmlContent = buildReminderEmailHtml(reminder.medicineName, customer.name);
+
+        const mailOptions = {
+          from: `"Pharmadesk Reminders" <${process.env.SMTP_USER || 'no-reply@pharmadesk.com'}>`,
+          to: customer.email,
+          subject: `💊 Reminder: Time to take ${reminder.medicineName}`,
+          html: htmlContent,
+        };
+
+        if (isEthereal) {
+          console.log(`[MOCK EMAIL] Reminder to ${customer.email}: ${reminder.medicineName}`);
+        } else {
+          await transporter.sendMail(mailOptions);
+          console.log(`[EMAIL SENT] Reminder to ${customer.email}: ${reminder.medicineName}`);
+        }
+
+        await Notification.create({
+          recipientId: customer._id,
+          type: 'Email',
+          message: messageText,
+          status: 'sent',
+        });
+      } catch (err) {
+        console.error(`[Reminder Cron] Failed emailing ${customer.email}:`, err.message);
+        await Notification.create({
+          recipientId: customer._id,
+          type: 'Email',
+          message: `Email reminder failed for ${reminder.medicineName}: ${err.message}`,
+          status: 'failed',
+        });
+      }
+    }
+
+    return { status: 'success', message: 'Email reminders processed' };
+  } catch (error) {
+    console.error('[Reminder Cron] Error:', error);
+    return { status: 'error', error: error.message };
+  }
+};
+
+// Initialize Cron Schedulers
