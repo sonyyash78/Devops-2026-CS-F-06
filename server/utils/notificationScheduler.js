@@ -426,3 +426,17 @@ export const runEmailReminders = async () => {
 };
 
 // Initialize Cron Schedulers
+export const initializeNotificationScheduler = () => {
+  // Cron 1 — 8:00 AM daily (0 8 * * *)
+  cron.schedule('0 8 * * *', runExpiryReport);
+  console.log('Scheduled Expiry Report Cron Job (8:00 AM daily)');
+
+  // Cron 2 — 9:00 AM daily (0 9 * * *)
+  cron.schedule('0 9 * * *', runLowStockReport);
+  console.log('Scheduled Low Stock Alert Cron Job (9:00 AM daily)');
+
+  // Cron 3 — Every minute (* * * * *)
+  // Matches each reminder's configured hour and minute, and sends email instantly
+  cron.schedule('* * * * *', runEmailReminders);
+  console.log('Scheduled Customer Email Reminder Cron Job (every minute, time-matched)');
+};
