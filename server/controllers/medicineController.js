@@ -195,3 +195,24 @@ export const updateMedicine = async (req, res, next) => {
 // @desc    Delete a medicine
 // @route   DELETE /api/medicines/:id
 // @access  Private/Pharmacist,Superadmin
+export const deleteMedicine = async (req, res, next) => {
+  const { id } = req.params;
+
+  try {
+    const medicine = await Medicine.findById(id);
+
+    if (!medicine) {
+      res.status(404);
+      throw new Error('Medicine not found');
+    }
+
+    await Medicine.findByIdAndDelete(id);
+    res.json({ message: 'Medicine deleted successfully' });
+  } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Bulk import medicines
+// @route   POST /api/medicines/bulk
+// @access  Private/Pharmacist,Superadmin
