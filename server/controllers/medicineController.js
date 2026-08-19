@@ -83,3 +83,55 @@ export const getAllMedicines = async (req, res, next) => {
 // @desc    Create a new medicine
 // @route   POST /api/medicines
 // @access  Private/Pharmacist,Superadmin
+export const createMedicine = async (req, res, next) => {
+  const {
+    name,
+    genericName,
+    manufacturer,
+    batchNumber,
+    expiryDate,
+    manufactureDate,
+    quantity,
+    reorderLevel,
+    price,
+    category,
+    barcode,
+    labelImageUrl,
+  } = req.body;
+
+  try {
+    const batchExists = await Medicine.findOne({ batchNumber });
+    if (batchExists) {
+      res.status(400);
+      throw new Error(`A medicine with batch number '${batchNumber}' already exists.`);
+    }
+
+    const medicine = await Medicine.create({
+      name,
+      genericName,
+      manufacturer,
+      batchNumber,
+      expiryDate,
+      manufactureDate,
+      quantity,
+      reorderLevel,
+      price,
+      category,
+      barcode,
+      labelImageUrl,
+      createdBy: req.user._id,
+    });
+
+    const populatedMed = await Medicine.findById(medicine._id).populate('createdBy', 'name email');
+    const medObj = populatedMed.toObject();
+    medObj.expiryStatus = checkExpiryStatus(populatedMed.expiryDate);
+
+    res.status(201).json(medObj);
+  } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Update a medicine
+// @route   PUT /api/medicines/:id
+// @access  Private/Pharmacist,Superadmin
