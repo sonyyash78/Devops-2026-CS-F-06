@@ -216,3 +216,78 @@ export const deleteMedicine = async (req, res, next) => {
 // @desc    Bulk import medicines
 // @route   POST /api/medicines/bulk
 // @access  Private/Pharmacist,Superadmin
+export const bulkImportMedicines = async (req, res, next) => {
+  const medicineArray = req.body;
+
+  if (!Array.isArray(medicineArray)) {
+    res.status(400);
+    return next(new Error('Payload must be a JSON array of medicines'));
+  }
+
+  try {
+    let insertedCount = 0;
+    let skippedCount = 0;
+    const skippedBatches = [];
+
+    for (const med of medicineArray) {
+      const {
+        name,
+        genericName,
+        manufacturer,
+        batchNumber,
+        expiryDate,
+        manufactureDate,
+        quantity,
+        reorderLevel,
+        price,
+        category,
+        barcode,
+        labelImageUrl,
+      } = med;
+
+      if (!name || !genericName || !manufacturer || !batchNumber || !expiryDate || !manufactureDate || price === undefined) {
+        skippedCount++;
+        skippedBatches.push({ batchNumber: batchNumber || 'UNKNOWN', reason: 'Missing required fields' });
+        continue;
+      }
+
+      const batchExists = await Medicine.findOne({ batchNumber });
+      if (batchExists) {
+        skippedCount++;
+        skippedBatches.push({ batchNumber, reason: 'Duplicate batch number' });
+        continue;
+      }
+
+      await Medicine.create({
+        name,
+        genericName,
+        manufacturer,
+        batchNumber,
+        expiryDate,
+        manufactureDate,
+        quantity: quantity || 0,
+        reorderLevel: reorderLevel || 10,
+        price,
+        category,
+        barcode,
+        labelImageUrl,
+        createdBy: req.user._id,
+      });
+
+      insertedCount++;
+    }
+
+    res.status(201).json({
+      message: 'Bulk import complete',
+      insertedCount,
+      skippedCount,
+      skippedDetails: skippedBatches,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Process a bill checkout and validate medicine statuses
+// @route   POST /api/medicines/bill
+// @access  Private
