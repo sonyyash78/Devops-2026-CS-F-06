@@ -135,3 +135,63 @@ export const createMedicine = async (req, res, next) => {
 // @desc    Update a medicine
 // @route   PUT /api/medicines/:id
 // @access  Private/Pharmacist,Superadmin
+export const updateMedicine = async (req, res, next) => {
+  const { id } = req.params;
+  const {
+    name,
+    genericName,
+    manufacturer,
+    batchNumber,
+    expiryDate,
+    manufactureDate,
+    quantity,
+    reorderLevel,
+    price,
+    category,
+    barcode,
+    labelImageUrl,
+  } = req.body;
+
+  try {
+    const medicine = await Medicine.findById(id);
+
+    if (!medicine) {
+      res.status(404);
+      throw new Error('Medicine not found');
+    }
+
+    if (batchNumber && batchNumber !== medicine.batchNumber) {
+      const batchExists = await Medicine.findOne({ batchNumber });
+      if (batchExists) {
+        res.status(400);
+        throw new Error(`A medicine with batch number '${batchNumber}' already exists.`);
+      }
+      medicine.batchNumber = batchNumber;
+    }
+
+    medicine.name = name !== undefined ? name : medicine.name;
+    medicine.genericName = genericName !== undefined ? genericName : medicine.genericName;
+    medicine.manufacturer = manufacturer !== undefined ? manufacturer : medicine.manufacturer;
+    medicine.expiryDate = expiryDate !== undefined ? expiryDate : medicine.expiryDate;
+    medicine.manufactureDate = manufactureDate !== undefined ? manufactureDate : medicine.manufactureDate;
+    medicine.quantity = quantity !== undefined ? quantity : medicine.quantity;
+    medicine.reorderLevel = reorderLevel !== undefined ? reorderLevel : medicine.reorderLevel;
+    medicine.price = price !== undefined ? price : medicine.price;
+    medicine.category = category !== undefined ? category : medicine.category;
+    medicine.barcode = barcode !== undefined ? barcode : medicine.barcode;
+    medicine.labelImageUrl = labelImageUrl !== undefined ? labelImageUrl : medicine.labelImageUrl;
+
+    const updatedMedicine = await medicine.save();
+    const populatedMed = await Medicine.findById(updatedMedicine._id).populate('createdBy', 'name email');
+    const medObj = populatedMed.toObject();
+    medObj.expiryStatus = checkExpiryStatus(populatedMed.expiryDate);
+
+    res.json(medObj);
+  } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Delete a medicine
+// @route   DELETE /api/medicines/:id
+// @access  Private/Pharmacist,Superadmin
