@@ -101,3 +101,60 @@ export const deleteReminder = async (req, res, next) => {
 // @desc    Log a browser notification that was shown to the customer
 // @route   POST /api/notifications/browser-log
 // @access  Private
+export const logBrowserNotification = async (req, res, next) => {
+  const { medicineName } = req.body;
+
+  if (!medicineName) {
+    res.status(400);
+    return next(new Error('Medicine name is required'));
+  }
+
+  try {
+    const messageText = `Pharmadesk Reminder: Time to take your ${medicineName}. Keep healthy!`;
+
+    const log = await Notification.create({
+      recipientId: req.user._id,
+      type: 'Browser',
+      message: messageText,
+      status: 'sent',
+    });
+
+    res.status(201).json(log);
+  } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Manually trigger scheduled cron jobs for verification
+// @route   POST /api/notifications/trigger/:cronNumber
+// @access  Private/Pharmacist,Superadmin
+export const triggerCron = async (req, res, next) => {
+  const { cronNumber } = req.params;
+
+  try {
+    let result;
+
+    if (cronNumber === '1') {
+      result = await runExpiryReport();
+    } else if (cronNumber === '2') {
+      result = await runLowStockReport();
+    } else if (cronNumber === '3') {
+      result = await runEmailReminders();
+    } else {
+      res.status(400);
+      throw new Error('Invalid cron job number specified. Choose 1, 2, or 3.');
+    }
+
+    if (result.status === 'error') {
+      res.status(500);
+      throw new Error(result.error || 'Trigger failed');
+    }
+
+    res.json({
+      message: `Cron job ${cronNumber} triggered successfully`,
+      details: result,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
