@@ -29,3 +29,28 @@ export const getNotificationHistory = async (req, res, next) => {
 // @desc    Create a customer medication reminder
 // @route   POST /api/notifications/reminders
 // @access  Private
+export const createReminder = async (req, res, next) => {
+  const { medicineName, phoneNumber, time } = req.body;
+
+  if (!medicineName || !phoneNumber) {
+    res.status(400);
+    return next(new Error('Medicine name and phone number are required'));
+  }
+
+  try {
+    const reminder = await Reminder.create({
+      customerId: req.user._id,
+      medicineName,
+      phoneNumber,
+      time: time || '10:00 AM',
+    });
+
+    res.status(201).json(reminder);
+  } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Get active reminders for a customer
+// @route   GET /api/notifications/reminders/customer/:customerId
+// @access  Private
