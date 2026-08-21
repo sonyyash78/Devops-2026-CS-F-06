@@ -54,3 +54,50 @@ export const createReminder = async (req, res, next) => {
 // @desc    Get active reminders for a customer
 // @route   GET /api/notifications/reminders/customer/:customerId
 // @access  Private
+export const getCustomerReminders = async (req, res, next) => {
+  const { customerId } = req.params;
+
+  try {
+    // Security check
+    if (req.user.role === 'customer' && req.user._id.toString() !== customerId) {
+      res.status(403);
+      throw new Error('Not authorized to view these reminders');
+    }
+
+    const reminders = await Reminder.find({ customerId }).sort({ createdAt: -1 });
+    res.json(reminders);
+  } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Delete a reminder
+// @route   DELETE /api/notifications/reminders/:id
+// @access  Private
+export const deleteReminder = async (req, res, next) => {
+  const { id } = req.params;
+
+  try {
+    const reminder = await Reminder.findById(id);
+
+    if (!reminder) {
+      res.status(404);
+      throw new Error('Reminder not found');
+    }
+
+    // Security check
+    if (req.user.role === 'customer' && req.user._id.toString() !== reminder.customerId.toString()) {
+      res.status(403);
+      throw new Error('Not authorized to delete this reminder');
+    }
+
+    await Reminder.findByIdAndDelete(id);
+    res.json({ message: 'Reminder deleted successfully' });
+  } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Log a browser notification that was shown to the customer
+// @route   POST /api/notifications/browser-log
+// @access  Private
