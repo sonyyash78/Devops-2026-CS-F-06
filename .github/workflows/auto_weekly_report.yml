@@ -38,8 +38,8 @@ jobs:
           mkdir -p weekly_reports
           mv *_Weekly_Progress_Report_Form-3_*.pdf weekly_reports/
 
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "Yash Soni"
+          git config --global user.email "yashsony23478@gmail.com"
 
           git add weekly_reports/
           
