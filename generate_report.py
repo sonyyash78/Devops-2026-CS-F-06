@@ -93,6 +93,15 @@ def get_git_metrics(interval="weekly"):
                 current_author = None
                 continue
             
+            # Standardize names so duplicates NEVER happen
+            author_lower = author.lower()
+            if "yash" in author_lower:
+                author = "Yash Soni"
+            elif "vansh" in author_lower:
+                author = "Vansh Agarwal"
+            elif "ujala" in author_lower:
+                author = "ujala-alt"
+            
             current_author = author
             current_date_str = date_str
             
