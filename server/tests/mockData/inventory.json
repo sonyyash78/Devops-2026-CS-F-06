@@ -1,0 +1,1994 @@
+[
+  {
+    "medicineId": "MED0001",
+    "name": "Amox 1mg",
+    "stock": 101,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0002",
+    "name": "Amox 2mg",
+    "stock": 102,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0003",
+    "name": "Amox 3mg",
+    "stock": 103,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0004",
+    "name": "Amox 4mg",
+    "stock": 104,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0005",
+    "name": "Amox 5mg",
+    "stock": 105,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0006",
+    "name": "Amox 6mg",
+    "stock": 106,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0007",
+    "name": "Amox 7mg",
+    "stock": 107,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0008",
+    "name": "Amox 8mg",
+    "stock": 108,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0009",
+    "name": "Amox 9mg",
+    "stock": 109,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0010",
+    "name": "Amox 10mg",
+    "stock": 110,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0011",
+    "name": "Amox 11mg",
+    "stock": 111,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0012",
+    "name": "Amox 12mg",
+    "stock": 112,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0013",
+    "name": "Amox 13mg",
+    "stock": 113,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0014",
+    "name": "Amox 14mg",
+    "stock": 114,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0015",
+    "name": "Amox 15mg",
+    "stock": 115,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0016",
+    "name": "Amox 16mg",
+    "stock": 116,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0017",
+    "name": "Amox 17mg",
+    "stock": 117,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0018",
+    "name": "Amox 18mg",
+    "stock": 118,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0019",
+    "name": "Amox 19mg",
+    "stock": 119,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0020",
+    "name": "Amox 20mg",
+    "stock": 120,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0021",
+    "name": "Amox 21mg",
+    "stock": 121,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0022",
+    "name": "Amox 22mg",
+    "stock": 122,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0023",
+    "name": "Amox 23mg",
+    "stock": 123,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0024",
+    "name": "Amox 24mg",
+    "stock": 124,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0025",
+    "name": "Amox 25mg",
+    "stock": 125,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0026",
+    "name": "Amox 26mg",
+    "stock": 126,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0027",
+    "name": "Amox 27mg",
+    "stock": 127,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0028",
+    "name": "Amox 28mg",
+    "stock": 128,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0029",
+    "name": "Amox 29mg",
+    "stock": 129,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0030",
+    "name": "Amox 30mg",
+    "stock": 130,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0031",
+    "name": "Amox 31mg",
+    "stock": 131,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0032",
+    "name": "Amox 32mg",
+    "stock": 132,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0033",
+    "name": "Amox 33mg",
+    "stock": 133,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0034",
+    "name": "Amox 34mg",
+    "stock": 134,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0035",
+    "name": "Amox 35mg",
+    "stock": 135,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0036",
+    "name": "Amox 36mg",
+    "stock": 136,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0037",
+    "name": "Amox 37mg",
+    "stock": 137,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0038",
+    "name": "Amox 38mg",
+    "stock": 138,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0039",
+    "name": "Amox 39mg",
+    "stock": 139,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0040",
+    "name": "Amox 40mg",
+    "stock": 140,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0041",
+    "name": "Amox 41mg",
+    "stock": 141,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0042",
+    "name": "Amox 42mg",
+    "stock": 142,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0043",
+    "name": "Amox 43mg",
+    "stock": 143,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0044",
+    "name": "Amox 44mg",
+    "stock": 144,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0045",
+    "name": "Amox 45mg",
+    "stock": 145,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0046",
+    "name": "Amox 46mg",
+    "stock": 146,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0047",
+    "name": "Amox 47mg",
+    "stock": 147,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0048",
+    "name": "Amox 48mg",
+    "stock": 148,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0049",
+    "name": "Amox 49mg",
+    "stock": 149,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0050",
+    "name": "Amox 50mg",
+    "stock": 150,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0051",
+    "name": "Amox 51mg",
+    "stock": 151,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0052",
+    "name": "Amox 52mg",
+    "stock": 152,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0053",
+    "name": "Amox 53mg",
+    "stock": 153,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0054",
+    "name": "Amox 54mg",
+    "stock": 154,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0055",
+    "name": "Amox 55mg",
+    "stock": 155,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0056",
+    "name": "Amox 56mg",
+    "stock": 156,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0057",
+    "name": "Amox 57mg",
+    "stock": 157,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0058",
+    "name": "Amox 58mg",
+    "stock": 158,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0059",
+    "name": "Amox 59mg",
+    "stock": 159,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0060",
+    "name": "Amox 60mg",
+    "stock": 160,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0061",
+    "name": "Amox 61mg",
+    "stock": 161,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0062",
+    "name": "Amox 62mg",
+    "stock": 162,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0063",
+    "name": "Amox 63mg",
+    "stock": 163,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0064",
+    "name": "Amox 64mg",
+    "stock": 164,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0065",
+    "name": "Amox 65mg",
+    "stock": 165,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0066",
+    "name": "Amox 66mg",
+    "stock": 166,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0067",
+    "name": "Amox 67mg",
+    "stock": 167,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0068",
+    "name": "Amox 68mg",
+    "stock": 168,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0069",
+    "name": "Amox 69mg",
+    "stock": 169,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0070",
+    "name": "Amox 70mg",
+    "stock": 170,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0071",
+    "name": "Amox 71mg",
+    "stock": 171,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0072",
+    "name": "Amox 72mg",
+    "stock": 172,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0073",
+    "name": "Amox 73mg",
+    "stock": 173,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0074",
+    "name": "Amox 74mg",
+    "stock": 174,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0075",
+    "name": "Amox 75mg",
+    "stock": 175,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0076",
+    "name": "Amox 76mg",
+    "stock": 176,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0077",
+    "name": "Amox 77mg",
+    "stock": 177,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0078",
+    "name": "Amox 78mg",
+    "stock": 178,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0079",
+    "name": "Amox 79mg",
+    "stock": 179,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0080",
+    "name": "Amox 80mg",
+    "stock": 180,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0081",
+    "name": "Amox 81mg",
+    "stock": 181,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0082",
+    "name": "Amox 82mg",
+    "stock": 182,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0083",
+    "name": "Amox 83mg",
+    "stock": 183,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0084",
+    "name": "Amox 84mg",
+    "stock": 184,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0085",
+    "name": "Amox 85mg",
+    "stock": 185,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0086",
+    "name": "Amox 86mg",
+    "stock": 186,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0087",
+    "name": "Amox 87mg",
+    "stock": 187,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0088",
+    "name": "Amox 88mg",
+    "stock": 188,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0089",
+    "name": "Amox 89mg",
+    "stock": 189,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0090",
+    "name": "Amox 90mg",
+    "stock": 190,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0091",
+    "name": "Amox 91mg",
+    "stock": 191,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0092",
+    "name": "Amox 92mg",
+    "stock": 192,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0093",
+    "name": "Amox 93mg",
+    "stock": 193,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0094",
+    "name": "Amox 94mg",
+    "stock": 194,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0095",
+    "name": "Amox 95mg",
+    "stock": 195,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0096",
+    "name": "Amox 96mg",
+    "stock": 196,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0097",
+    "name": "Amox 97mg",
+    "stock": 197,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0098",
+    "name": "Amox 98mg",
+    "stock": 198,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0099",
+    "name": "Amox 99mg",
+    "stock": 199,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0100",
+    "name": "Amox 100mg",
+    "stock": 200,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0101",
+    "name": "Amox 101mg",
+    "stock": 201,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0102",
+    "name": "Amox 102mg",
+    "stock": 202,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0103",
+    "name": "Amox 103mg",
+    "stock": 203,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0104",
+    "name": "Amox 104mg",
+    "stock": 204,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0105",
+    "name": "Amox 105mg",
+    "stock": 205,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0106",
+    "name": "Amox 106mg",
+    "stock": 206,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0107",
+    "name": "Amox 107mg",
+    "stock": 207,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0108",
+    "name": "Amox 108mg",
+    "stock": 208,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0109",
+    "name": "Amox 109mg",
+    "stock": 209,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0110",
+    "name": "Amox 110mg",
+    "stock": 210,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0111",
+    "name": "Amox 111mg",
+    "stock": 211,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0112",
+    "name": "Amox 112mg",
+    "stock": 212,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0113",
+    "name": "Amox 113mg",
+    "stock": 213,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0114",
+    "name": "Amox 114mg",
+    "stock": 214,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0115",
+    "name": "Amox 115mg",
+    "stock": 215,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0116",
+    "name": "Amox 116mg",
+    "stock": 216,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0117",
+    "name": "Amox 117mg",
+    "stock": 217,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0118",
+    "name": "Amox 118mg",
+    "stock": 218,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0119",
+    "name": "Amox 119mg",
+    "stock": 219,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0120",
+    "name": "Amox 120mg",
+    "stock": 220,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0121",
+    "name": "Amox 121mg",
+    "stock": 221,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0122",
+    "name": "Amox 122mg",
+    "stock": 222,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0123",
+    "name": "Amox 123mg",
+    "stock": 223,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0124",
+    "name": "Amox 124mg",
+    "stock": 224,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0125",
+    "name": "Amox 125mg",
+    "stock": 225,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0126",
+    "name": "Amox 126mg",
+    "stock": 226,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0127",
+    "name": "Amox 127mg",
+    "stock": 227,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0128",
+    "name": "Amox 128mg",
+    "stock": 228,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0129",
+    "name": "Amox 129mg",
+    "stock": 229,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0130",
+    "name": "Amox 130mg",
+    "stock": 230,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0131",
+    "name": "Amox 131mg",
+    "stock": 231,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0132",
+    "name": "Amox 132mg",
+    "stock": 232,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0133",
+    "name": "Amox 133mg",
+    "stock": 233,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0134",
+    "name": "Amox 134mg",
+    "stock": 234,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0135",
+    "name": "Amox 135mg",
+    "stock": 235,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0136",
+    "name": "Amox 136mg",
+    "stock": 236,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0137",
+    "name": "Amox 137mg",
+    "stock": 237,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0138",
+    "name": "Amox 138mg",
+    "stock": 238,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0139",
+    "name": "Amox 139mg",
+    "stock": 239,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0140",
+    "name": "Amox 140mg",
+    "stock": 240,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0141",
+    "name": "Amox 141mg",
+    "stock": 241,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0142",
+    "name": "Amox 142mg",
+    "stock": 242,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0143",
+    "name": "Amox 143mg",
+    "stock": 243,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0144",
+    "name": "Amox 144mg",
+    "stock": 244,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0145",
+    "name": "Amox 145mg",
+    "stock": 245,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0146",
+    "name": "Amox 146mg",
+    "stock": 246,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0147",
+    "name": "Amox 147mg",
+    "stock": 247,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0148",
+    "name": "Amox 148mg",
+    "stock": 248,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0149",
+    "name": "Amox 149mg",
+    "stock": 249,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0150",
+    "name": "Amox 150mg",
+    "stock": 250,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0151",
+    "name": "Amox 151mg",
+    "stock": 251,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0152",
+    "name": "Amox 152mg",
+    "stock": 252,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0153",
+    "name": "Amox 153mg",
+    "stock": 253,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0154",
+    "name": "Amox 154mg",
+    "stock": 254,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0155",
+    "name": "Amox 155mg",
+    "stock": 255,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0156",
+    "name": "Amox 156mg",
+    "stock": 256,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0157",
+    "name": "Amox 157mg",
+    "stock": 257,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0158",
+    "name": "Amox 158mg",
+    "stock": 258,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0159",
+    "name": "Amox 159mg",
+    "stock": 259,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0160",
+    "name": "Amox 160mg",
+    "stock": 260,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0161",
+    "name": "Amox 161mg",
+    "stock": 261,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0162",
+    "name": "Amox 162mg",
+    "stock": 262,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0163",
+    "name": "Amox 163mg",
+    "stock": 263,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0164",
+    "name": "Amox 164mg",
+    "stock": 264,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0165",
+    "name": "Amox 165mg",
+    "stock": 265,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0166",
+    "name": "Amox 166mg",
+    "stock": 266,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0167",
+    "name": "Amox 167mg",
+    "stock": 267,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0168",
+    "name": "Amox 168mg",
+    "stock": 268,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0169",
+    "name": "Amox 169mg",
+    "stock": 269,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0170",
+    "name": "Amox 170mg",
+    "stock": 270,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0171",
+    "name": "Amox 171mg",
+    "stock": 271,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0172",
+    "name": "Amox 172mg",
+    "stock": 272,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0173",
+    "name": "Amox 173mg",
+    "stock": 273,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0174",
+    "name": "Amox 174mg",
+    "stock": 274,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0175",
+    "name": "Amox 175mg",
+    "stock": 275,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0176",
+    "name": "Amox 176mg",
+    "stock": 276,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0177",
+    "name": "Amox 177mg",
+    "stock": 277,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0178",
+    "name": "Amox 178mg",
+    "stock": 278,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0179",
+    "name": "Amox 179mg",
+    "stock": 279,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0180",
+    "name": "Amox 180mg",
+    "stock": 280,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0181",
+    "name": "Amox 181mg",
+    "stock": 281,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0182",
+    "name": "Amox 182mg",
+    "stock": 282,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0183",
+    "name": "Amox 183mg",
+    "stock": 283,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0184",
+    "name": "Amox 184mg",
+    "stock": 284,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0185",
+    "name": "Amox 185mg",
+    "stock": 285,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0186",
+    "name": "Amox 186mg",
+    "stock": 286,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0187",
+    "name": "Amox 187mg",
+    "stock": 287,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0188",
+    "name": "Amox 188mg",
+    "stock": 288,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0189",
+    "name": "Amox 189mg",
+    "stock": 289,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0190",
+    "name": "Amox 190mg",
+    "stock": 290,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0191",
+    "name": "Amox 191mg",
+    "stock": 291,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0192",
+    "name": "Amox 192mg",
+    "stock": 292,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0193",
+    "name": "Amox 193mg",
+    "stock": 293,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0194",
+    "name": "Amox 194mg",
+    "stock": 294,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0195",
+    "name": "Amox 195mg",
+    "stock": 295,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0196",
+    "name": "Amox 196mg",
+    "stock": 296,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0197",
+    "name": "Amox 197mg",
+    "stock": 297,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0198",
+    "name": "Amox 198mg",
+    "stock": 298,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0199",
+    "name": "Amox 199mg",
+    "stock": 299,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0200",
+    "name": "Amox 200mg",
+    "stock": 300,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0201",
+    "name": "Amox 201mg",
+    "stock": 301,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0202",
+    "name": "Amox 202mg",
+    "stock": 302,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0203",
+    "name": "Amox 203mg",
+    "stock": 303,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0204",
+    "name": "Amox 204mg",
+    "stock": 304,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0205",
+    "name": "Amox 205mg",
+    "stock": 305,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0206",
+    "name": "Amox 206mg",
+    "stock": 306,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0207",
+    "name": "Amox 207mg",
+    "stock": 307,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0208",
+    "name": "Amox 208mg",
+    "stock": 308,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0209",
+    "name": "Amox 209mg",
+    "stock": 309,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0210",
+    "name": "Amox 210mg",
+    "stock": 310,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0211",
+    "name": "Amox 211mg",
+    "stock": 311,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0212",
+    "name": "Amox 212mg",
+    "stock": 312,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0213",
+    "name": "Amox 213mg",
+    "stock": 313,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0214",
+    "name": "Amox 214mg",
+    "stock": 314,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0215",
+    "name": "Amox 215mg",
+    "stock": 315,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0216",
+    "name": "Amox 216mg",
+    "stock": 316,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0217",
+    "name": "Amox 217mg",
+    "stock": 317,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0218",
+    "name": "Amox 218mg",
+    "stock": 318,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0219",
+    "name": "Amox 219mg",
+    "stock": 319,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0220",
+    "name": "Amox 220mg",
+    "stock": 320,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0221",
+    "name": "Amox 221mg",
+    "stock": 321,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0222",
+    "name": "Amox 222mg",
+    "stock": 322,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0223",
+    "name": "Amox 223mg",
+    "stock": 323,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0224",
+    "name": "Amox 224mg",
+    "stock": 324,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0225",
+    "name": "Amox 225mg",
+    "stock": 325,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0226",
+    "name": "Amox 226mg",
+    "stock": 326,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0227",
+    "name": "Amox 227mg",
+    "stock": 327,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0228",
+    "name": "Amox 228mg",
+    "stock": 328,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0229",
+    "name": "Amox 229mg",
+    "stock": 329,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0230",
+    "name": "Amox 230mg",
+    "stock": 330,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0231",
+    "name": "Amox 231mg",
+    "stock": 331,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0232",
+    "name": "Amox 232mg",
+    "stock": 332,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0233",
+    "name": "Amox 233mg",
+    "stock": 333,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0234",
+    "name": "Amox 234mg",
+    "stock": 334,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0235",
+    "name": "Amox 235mg",
+    "stock": 335,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0236",
+    "name": "Amox 236mg",
+    "stock": 336,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0237",
+    "name": "Amox 237mg",
+    "stock": 337,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0238",
+    "name": "Amox 238mg",
+    "stock": 338,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0239",
+    "name": "Amox 239mg",
+    "stock": 339,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0240",
+    "name": "Amox 240mg",
+    "stock": 340,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0241",
+    "name": "Amox 241mg",
+    "stock": 341,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0242",
+    "name": "Amox 242mg",
+    "stock": 342,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0243",
+    "name": "Amox 243mg",
+    "stock": 343,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0244",
+    "name": "Amox 244mg",
+    "stock": 344,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0245",
+    "name": "Amox 245mg",
+    "stock": 345,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0246",
+    "name": "Amox 246mg",
+    "stock": 346,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0247",
+    "name": "Amox 247mg",
+    "stock": 347,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0248",
+    "name": "Amox 248mg",
+    "stock": 348,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  },
+  {
+    "medicineId": "MED0249",
+    "name": "Amox 249mg",
+    "stock": 349,
+    "price": 15.99,
+    "category": "Antibiotic",
+    "prescriptionRequired": true
+  }
+]
