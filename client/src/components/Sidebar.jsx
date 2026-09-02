@@ -72,7 +72,6 @@ const Sidebar = () => {
         return [];
     }
   };
-
   const links = getLinks();
 
   return (

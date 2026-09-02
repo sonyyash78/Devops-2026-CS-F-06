@@ -1,0 +1,20 @@
+{
+  "name": "pharmadesk",
+  "version": "1.0.0",
+  "description": "Pharmadesk — Intelligent pharmacy management portal with role-based access",
+  "main": "server/server.js",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client --legacy-peer-deps",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "seed": "npm run seed --prefix server",
+    "test": "npm --prefix server test",
+    "lint": "npm --prefix client run lint",
+    "build": "npm --prefix client run build",
+    "start": "node server/server.js"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
