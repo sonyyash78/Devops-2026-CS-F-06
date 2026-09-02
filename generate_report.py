@@ -20,26 +20,7 @@ DEPARTMENT_NAME = "Department of Computer Science & Engineering"
 # -------------------------------------------------------------
 
 def get_repo_info():
-    """Extracts the repository name and current branch."""
-    repo_name = "Project-Repository"
-    branch_name = "main"
-
-    try:
-        root_path = subprocess.check_output(['git', 'rev-parse', '--show-toplevel'], encoding='utf-8').strip()
-        repo_name = os.path.basename(root_path)
-    except Exception:
-        try:
-            remote_url = subprocess.check_output(['git', 'config', '--get', 'remote.origin.url'], encoding='utf-8').strip()
-            repo_name = remote_url.rstrip('/').split('/')[-1].replace('.git', '')
-        except Exception:
-            repo_name = os.path.basename(os.getcwd())
-
-    try:
-        branch_name = subprocess.check_output(['git', 'rev-parse', '--abbrev-ref', 'HEAD'], encoding='utf-8').strip()
-    except Exception:
-        pass
-
-    return repo_name, branch_name
+    return "Devops-2026-CS-F-06", "main"
 
 def get_git_metrics(interval="weekly"):
     """
@@ -294,7 +275,7 @@ def generate_pdf(interval="weekly"):
     else:
         for student_name, logs in student_logs.items():
             student_section = []
-            student_section.append(Paragraph(f"<b>Student:</b> {html.escape(student_name)} — <i>{len(logs)} commit(s)</i>", sub_section_style))
+            student_section.append(Paragraph(f"<b>Student:</b> {html.escape(student_name)} â€” <i>{len(logs)} commit(s)</i>", sub_section_style))
             
             log_table_data = [["Date", "Hash", "Commit Message"]]
             for date_val, sha_val, msg_val in logs:
