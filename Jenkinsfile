@@ -1,4 +1,4 @@
-pipeline {
+﻿pipeline {
     agent any
 
     triggers {
@@ -37,9 +37,9 @@ pipeline {
             steps {
                 script {
                     if (isUnix()) {
-                        sh 'npm --prefix server test'
+                        sh 'NO_COLOR=1 npm --prefix server test > test-results.log'
                     } else {
-                        bat 'npm --prefix server test'
+                        bat 'set NO_COLOR=1 && npm --prefix server test > test-results.log'
                     }
                 }
             }
@@ -72,7 +72,10 @@ pipeline {
 
     post {
         always {
+            archiveArtifacts artifacts: 'test-results.log', allowEmptyArchive: true
             deleteDir()
         }
     }
 }
+
+
