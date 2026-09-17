@@ -1,0 +1,11 @@
+node_modules
+client/node_modules
+server/node_modules
+npm-debug.log*
+.git
+.gitignore
+server/.env
+server/uploads/*
+weekly_reports
+*.pyc
+__pycache__
