@@ -1,0 +1,19 @@
+{
+  "name": "devops-login-app",
+  "version": "1.0.0",
+  "description": "Basic login application with server validation and CI/CD setup",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test.js"
+  },
+  "keywords": [
+    "nodejs",
+    "login",
+    "docker",
+    "jenkins",
+    "ci-cd"
+  ],
+  "author": "",
+  "license": "ISC"
+}

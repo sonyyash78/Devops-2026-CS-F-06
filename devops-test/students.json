@@ -1,0 +1,26 @@
+[
+  {
+    "fullName": "test",
+    "branch": "CSE",
+    "email": "test@gmail.com",
+    "number": "1234567890",
+    "password": "123456789",
+    "registeredAt": "2026-08-07T04:32:02.492Z"
+  },
+  {
+    "fullName": "example",
+    "branch": "CSE",
+    "email": "example@gmail.com",
+    "number": "1234567890",
+    "password": "123456789",
+    "registeredAt": "2026-08-10T07:09:33.079Z"
+  },
+  {
+    "fullName": "example",
+    "branch": "CSE",
+    "email": "example@gmail.com",
+    "number": "1234567890",
+    "password": "123456789",
+    "registeredAt": "2026-08-10T07:09:33.079Z"
+  }
+]

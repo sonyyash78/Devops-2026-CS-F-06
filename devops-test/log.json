@@ -1,0 +1,66 @@
+[
+  {
+    "email": "ujala@gmail.com",
+    "password": "ujala@123",
+    "status": "failed",
+    "message": "Invalid email or password.",
+    "timestamp": "2026-09-28T07:21:13.820Z",
+    "loggedAt": "2026-09-28T07:21:13.820Z"
+  },
+  {
+    "email": "ujala@gmail.com",
+    "password": "ujala@123",
+    "status": "failed",
+    "message": "Invalid email or password.",
+    "timestamp": "2026-09-28T07:22:47.268Z",
+    "loggedAt": "2026-09-28T07:22:47.268Z"
+  },
+  {
+    "email": "ujala@gmail.com",
+    "password": "ujala@123",
+    "status": "failed",
+    "message": "Invalid email or password.",
+    "timestamp": "2026-09-28T07:23:04.765Z",
+    "loggedAt": "2026-09-28T07:23:04.765Z"
+  },
+  {
+    "email": "ujala@gmail.com",
+    "password": "ujala@123",
+    "status": "failed",
+    "message": "Invalid email or password.",
+    "timestamp": "2026-09-28T07:23:17.280Z",
+    "loggedAt": "2026-09-28T07:23:17.280Z"
+  },
+  {
+    "email": "ujala@gmail.com",
+    "password": "ujala@123",
+    "status": "failed",
+    "message": "Invalid email or password.",
+    "timestamp": "2026-09-28T07:23:33.151Z",
+    "loggedAt": "2026-09-28T07:23:33.151Z"
+  },
+  {
+    "email": "ujala@gmail.com",
+    "password": "ujala@123",
+    "status": "failed",
+    "message": "Invalid email or password.",
+    "timestamp": "2026-09-28T07:23:43.097Z",
+    "loggedAt": "2026-09-28T07:23:43.097Z"
+  },
+  {
+    "email": "tanish@gmail.com",
+    "password": "tanish@123",
+    "status": "success",
+    "message": "Login successful!",
+    "timestamp": "2026-09-28T07:24:24.403Z",
+    "loggedAt": "2026-09-28T07:24:24.403Z"
+  },
+  {
+    "email": "ujala@gmail.com",
+    "password": "ujala@123",
+    "status": "success",
+    "message": "Login successful!",
+    "timestamp": "2026-09-28T07:25:25.434Z",
+    "loggedAt": "2026-09-28T07:25:25.434Z"
+  }
+]

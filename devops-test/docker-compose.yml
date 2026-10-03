@@ -1,0 +1,15 @@
+services:
+  login-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: devops-login-app:latest
+    container_name: devops-login-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+    volumes:
+      - ./log.json:/app/log.json
