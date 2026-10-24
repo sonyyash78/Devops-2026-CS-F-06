@@ -185,3 +185,19 @@ After running the seeder script, you can log in using the following pre-configur
 * **Superadmin**: `superadmin@pharmadesk.com` / `admin123`
 * **Pharmacist**: `pharmacist@pharmadesk.com` / `pharmacist123`
 * **Customer**: `customer@pharmadesk.com` / `customer123`
+
+---
+
+## 🐳 Docker & ☸️ Kubernetes Deployment
+
+### Run with Docker Compose
+```bash
+docker compose up --build -d
+```
+
+### Run with Kubernetes
+```bash
+kubectl apply -f k8s/
+```
+For detailed Kubernetes setup and architecture, see [k8s/README.md](k8s/README.md).
+

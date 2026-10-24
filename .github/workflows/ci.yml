@@ -38,6 +38,15 @@ jobs:
       run: |
         npm --prefix client run build
 
+    - name: Validate Kubernetes Manifests
+      run: |
+        kubectl kustomize k8s/
+
+    - name: Validate Docker Compose Configuration
+      run: |
+        cp server/.env.example server/.env
+        docker compose config
+
     - name: Upload Test Results Artifact
       uses: actions/upload-artifact@v4
       if: always() # Uploads the test logs even if the tests fail

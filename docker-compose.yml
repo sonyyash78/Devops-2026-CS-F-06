@@ -29,7 +29,8 @@ services:
     ports:
       - "5000:5000"
     env_file:
-      - server/.env
+      - path: server/.env
+        required: false
     environment:
       MONGO_URI: mongodb://mongo:27017/pharmadesk
       NODE_ENV: production
