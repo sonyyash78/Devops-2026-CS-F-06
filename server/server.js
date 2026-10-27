@@ -11,6 +11,7 @@ import billRoutes from './routes/billRoutes.js';
 import notificationRoutes from './routes/notificationRoutes.js';
 import { initializeNotificationScheduler } from './utils/notificationScheduler.js';
 import customerRoutes from './routes/customerRoutes.js';
+import { metricsRegistry, metricsMiddleware } from './utils/metrics.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -64,10 +65,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use(metricsMiddleware);
 
 // Base Route
 app.get('/', (req, res) => {
   res.send('Pharmadesk API is running...');
+});
+
+app.get('/metrics', async (req, res, next) => {
+  try {
+    res.set('Content-Type', metricsRegistry.contentType);
+    res.end(await metricsRegistry.metrics());
+  } catch (error) {
+    next(error);
+  }
 });
 
 // Register API Routes

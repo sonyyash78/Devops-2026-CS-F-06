@@ -1,0 +1,11 @@
+apiVersion: 1
+
+providers:
+  - name: PharmaDesk
+    orgId: 1
+    folder: PharmaDesk
+    type: file
+    disableDeletion: true
+    editable: true
+    options:
+      path: /var/lib/grafana/dashboards

@@ -195,9 +195,15 @@ After running the seeder script, you can log in using the following pre-configur
 docker compose up --build -d
 ```
 
+The Compose stack also includes Prometheus and Grafana:
+* **Grafana**: [http://localhost:3002](http://localhost:3002) (default login: `admin` / `admin`; change these with `GRAFANA_ADMIN_USER` and `GRAFANA_ADMIN_PASSWORD` before deployment).
+* **Prometheus**: [http://localhost:9090](http://localhost:9090).
+* The API exposes Prometheus metrics at `http://localhost:5000/metrics`. Prometheus scrapes the API every 15 seconds, and the **PharmaDesk API Overview** dashboard is provisioned automatically in Grafana.
+
+Prometheus and Grafana are bound to localhost. Set strong Grafana credentials before exposing the dashboard beyond a local development machine.
+
 ### Run with Kubernetes
 ```bash
 kubectl apply -f k8s/
 ```
 For detailed Kubernetes setup and architecture, see [k8s/README.md](k8s/README.md).
-
