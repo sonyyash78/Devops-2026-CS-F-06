@@ -9,8 +9,9 @@ import matplotlib.pyplot as plt
 
 from reportlab.lib.pagesizes import letter
 from reportlab.lib import colors
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, Image, KeepTogether
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, Image, PageBreak
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.pdfgen import canvas
 
 # -------------------------------------------------------------
 # CONFIGURATION: Institution & Department Details
@@ -18,6 +19,35 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 COLLEGE_NAME = "Swami Keshvanand Institute of Technology, Management & Gramothan, Jaipur"
 DEPARTMENT_NAME = "Department of Computer Science & Engineering"
 # -------------------------------------------------------------
+
+class NumberedCanvas(canvas.Canvas):
+    """Adds Page X of Y and professional footer across all pages."""
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._saved_page_states = []
+
+    def showPage(self):
+        self._saved_page_states.append(dict(self.__dict__))
+        self._startPage()
+
+    def save(self):
+        num_pages = len(self._saved_page_states)
+        for state in self._saved_page_states:
+            self.__dict__.update(state)
+            self.draw_page_footer(num_pages)
+            canvas.Canvas.showPage(self)
+        canvas.Canvas.save(self)
+
+    def draw_page_footer(self, page_count):
+        self.saveState()
+        self.setFont("Helvetica", 8)
+        self.setFillColor(colors.HexColor("#64748B"))
+        # Left footer: Project name & Dept
+        self.drawString(36, 18, "Pharma Desk — Devops-2026-CS-F-06 | Department of Computer Science & Engineering")
+        # Right footer: Page X of Y
+        page_text = f"Page {self._pageNumber} of {page_count}"
+        self.drawRightString(612 - 36, 18, page_text)
+        self.restoreState()
 
 def get_repo_info():
     """Extracts the repository name and current branch."""
@@ -47,7 +77,7 @@ def get_git_metrics(interval="weekly"):
     Supported intervals: 'weekly', 'monthly', 'final'
     """
     today = datetime.date.today()
-    git_args = ['git', 'log', '--no-merges', '--pretty=format:COMMIT|||%h|||%an|||%ad|||%s', '--date=short', '--numstat']
+    git_args = ['git', 'log', '--pretty=format:COMMIT|||%h|||%an|||%ad|||%s', '--date=short', '--numstat']
     
     if interval == "weekly":
         since_date = (today - datetime.timedelta(days=7)).strftime("%Y-%m-%d")
@@ -164,7 +194,7 @@ def create_charts(students, timeline_activity, interval):
     plt.savefig(img_buffer, format='png', dpi=200)
     plt.close()
     img_buffer.seek(0)
-    return Image(img_buffer, width=500, height=170)
+    return Image(img_buffer, width=500, height=165)
 
 def generate_pdf(interval="weekly"):
     repo_name, branch_name = get_repo_info()
@@ -190,8 +220,8 @@ def generate_pdf(interval="weekly"):
         pagesize=letter,
         rightMargin=36,
         leftMargin=36,
-        topMargin=30,
-        bottomMargin=30
+        topMargin=28,
+        bottomMargin=28
     )
 
     styles = getSampleStyleSheet()
@@ -202,27 +232,27 @@ def generate_pdf(interval="weekly"):
     )
     dept_style = ParagraphStyle(
         'DeptStyle', parent=styles['Normal'],
-        fontSize=9.5, leading=13, textColor=colors.HexColor("#475569"), alignment=1, spaceAfter=6
+        fontSize=9.5, leading=13, textColor=colors.HexColor("#475569"), alignment=1, spaceAfter=5
     )
     title_style = ParagraphStyle(
         'TitleStyle', parent=styles['Heading2'],
-        fontSize=13, leading=17, textColor=colors.HexColor("#1A365D"), alignment=1, spaceAfter=5
+        fontSize=13, leading=17, textColor=colors.HexColor("#1A365D"), alignment=1, spaceAfter=4
     )
     repo_style = ParagraphStyle(
         'RepoStyle', parent=styles['Normal'],
-        fontSize=9.5, leading=14, textColor=colors.HexColor("#0F172A"), spaceAfter=3
+        fontSize=9.5, leading=14, textColor=colors.HexColor("#0F172A"), spaceAfter=2
     )
     meta_style = ParagraphStyle(
         'MetaStyle', parent=styles['Normal'],
-        fontSize=8.5, textColor=colors.HexColor("#64748B"), spaceAfter=8
+        fontSize=8.5, textColor=colors.HexColor("#64748B"), spaceAfter=6
     )
     section_style = ParagraphStyle(
         'SectionStyle', parent=styles['Heading2'],
-        fontSize=10.5, leading=14, textColor=colors.HexColor("#0F172A"), spaceBefore=7, spaceAfter=4
+        fontSize=10.5, leading=14, textColor=colors.HexColor("#0F172A"), spaceBefore=5, spaceAfter=3
     )
     sub_section_style = ParagraphStyle(
         'SubSectionStyle', parent=styles['Heading3'],
-        fontSize=9, leading=12, textColor=colors.HexColor("#2563EB"), spaceBefore=5, spaceAfter=2
+        fontSize=9, leading=12, textColor=colors.HexColor("#2563EB"), spaceBefore=6, spaceAfter=2
     )
     msg_style = ParagraphStyle(
         'MsgStyle', parent=styles['Normal'],
@@ -239,7 +269,7 @@ def generate_pdf(interval="weekly"):
     story.append(Paragraph(f"<b>{html.escape(COLLEGE_NAME)}</b>", college_style))
     story.append(Paragraph(f"<b>{html.escape(DEPARTMENT_NAME)}</b>", dept_style))
     story.append(Paragraph(f"<u><b>{report_title}</b></u>", title_style))
-    story.append(Spacer(1, 3))
+    story.append(Spacer(1, 2))
 
     # 2. Metadata
     story.append(Paragraph(f"<b>Project Repository:</b> <font color='#2563EB'><b>{html.escape(repo_name)}</b></font> &nbsp;|&nbsp; <b>Branch:</b> <code>{html.escape(branch_name)}</code>", repo_style))
@@ -254,13 +284,15 @@ def generate_pdf(interval="weekly"):
         for name, data in students.items():
             pct = (data["commits"] / total_commits * 100) if total_commits > 0 else 0
             net = data["added"] - data["deleted"]
+            days_val = len(data["active_days"])
+                
             table_data.append([
                 html.escape(name),
                 f"{data['commits']} ({pct:.1f}%)",
                 f"+{data['added']:,}",
                 f"-{data['deleted']:,}",
                 f"{net:,}",
-                f"{len(data['active_days'])} days"
+                f"{days_val} days"
             ])
     else:
         table_data.append(["No commits found in this period. Run with 'final' to see all commits.", "-", "-", "-", "-", "-"])
@@ -279,22 +311,26 @@ def generate_pdf(interval="weekly"):
         ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, colors.HexColor("#F8FAFC")]),
     ]))
     story.append(table)
-    story.append(Spacer(1, 6))
+    story.append(Spacer(1, 5))
 
     # 4. Visual Charts
     story.append(Paragraph("2. Visual Trends & Volume", section_style))
     chart_image = create_charts(students, timeline_activity, interval)
     story.append(chart_image)
-    story.append(Spacer(1, 6))
+    story.append(Spacer(1, 4))
 
-    # 5. Detailed Commit Logs per Student
+    # 5. Detailed Commit Logs per Student (Placed cleanly on Page 2 onwards)
+    story.append(PageBreak())
     story.append(Paragraph(f"3. Detailed Commit Logs ({interval.capitalize()})", section_style))
+    story.append(Paragraph("Complete record of commit timestamps, unique commit hashes, and developer messages.", meta_style))
+    story.append(Spacer(1, 4))
+
     if not student_logs:
         story.append(Paragraph("<i>No commit logs found for this timeframe.</i>", styles['Normal']))
     else:
         for student_name, logs in student_logs.items():
-            student_section = []
-            student_section.append(Paragraph(f"<b>Student:</b> {html.escape(student_name)} — <i>{len(logs)} commit(s)</i>", sub_section_style))
+            story.append(Paragraph(f"<b>Student:</b> {html.escape(student_name)} &nbsp;&nbsp;|&nbsp;&nbsp; <i>{len(logs)} commit(s)</i>", sub_section_style))
+            story.append(Spacer(1, 2))
             
             log_table_data = [["Date", "Hash", "Commit Message"]]
             for date_val, sha_val, msg_val in logs:
@@ -305,7 +341,7 @@ def generate_pdf(interval="weekly"):
                     Paragraph(safe_msg, msg_style)
                 ])
             
-            log_table = Table(log_table_data, colWidths=[70, 60, 410])
+            log_table = Table(log_table_data, colWidths=[70, 60, 410], repeatRows=1)
             t_style = [
                 ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor("#475569")),
                 ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
@@ -319,13 +355,22 @@ def generate_pdf(interval="weekly"):
             ]
             
             log_table.setStyle(TableStyle(t_style))
-            student_section.append(log_table)
-            student_section.append(Spacer(1, 5))
-            story.append(KeepTogether(student_section))
+            story.append(log_table)
+            story.append(Spacer(1, 7))
 
-    doc.build(story)
+    # Build document with NumberedCanvas to guarantee professional page numbers
+    doc.build(story, canvasmaker=NumberedCanvas)
     print(f"\n[SUCCESS] Generated: {doc_name}")
     print(f" -> Found {len(students)} student(s) and {total_commits} total commits.")
+
+    # Also sync a copy to Downloads folder if it exists
+    downloads_path = os.path.join(os.path.expanduser("~"), "Downloads", "final github report.pdf")
+    try:
+        import shutil
+        shutil.copy2(doc_name, downloads_path)
+        print(f"[SUCCESS] Updated Downloads copy: {downloads_path}")
+    except Exception as e:
+        pass
 
 if __name__ == "__main__":
     chosen_interval = sys.argv[1].lower() if len(sys.argv) > 1 else "weekly"

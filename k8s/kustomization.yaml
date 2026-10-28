@@ -7,3 +7,6 @@ resources:
   - backend.yaml
   - frontend.yaml
   - ingress.yaml
+  - prometheus.yaml
+  - grafana.yaml
+  - hpa.yaml
