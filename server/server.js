@@ -46,7 +46,7 @@ app.use(
       
       // Normalize origin by stripping trailing slash
       const cleanOrigin = origin.replace(/\/$/, '');
-      const isAllowed = allowedOrigins.some(o => o && o.replace(/\/$/, '') === cleanOrigin);
+      const isAllowed = allowedOrigins.some(o => o && o.replace(/\/$/, '') === cleanOrigin) || /\.vercel\.app$/.test(cleanOrigin);
       
       if (isAllowed) {
         return callback(null, true);

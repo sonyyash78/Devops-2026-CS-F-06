@@ -11,7 +11,7 @@
     "seed": "npm run seed --prefix server",
     "test": "npm --prefix server test",
     "lint": "npm --prefix client run lint",
-    "build": "npm --prefix client run build",
+    "build": "cd client && npm install --legacy-peer-deps && npm run build",
     "start": "node server/server.js"
   },
   "devDependencies": {
