@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Activity, Mail, Lock, Eye, EyeOff, AlertCircle } from 'lucide-react';
 
 // Configure Axios defaults to connect with backend correctly
-axios.defaults.baseURL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+let rawLoginUrl = (import.meta.env.VITE_API_URL || 'http://localhost:5000').trim().replace(/\/+$/, ''); if (!rawLoginUrl.startsWith('http://') && !rawLoginUrl.startsWith('https://')) { rawLoginUrl = 'https://' + rawLoginUrl; } axios.defaults.baseURL = rawLoginUrl;
 axios.defaults.withCredentials = true;
 
 const Login = () => {
@@ -298,3 +298,4 @@ const Login = () => {
 };
 
 export default Login;
+
